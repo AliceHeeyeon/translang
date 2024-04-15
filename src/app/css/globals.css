@@ -1,0 +1,276 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@keyframes flashing-red-animation {
+  0% {
+    background-color: transparent;
+  }
+  50% {
+    background-color: pink;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.color #header {
+  color: #FFFAFA;
+  background-color: #161616;
+  transition: ease 1s all;
+}
+.color #header .mode-toggle {
+  background-color: white;
+}
+.color #header .mode-toggle .ball {
+  right: 0px;
+  background-color: #F89461;
+}
+.color #header .mode-toggle p {
+  text-align: left;
+  padding: 0px 100px 0px 0px;
+  transition: ease 1s all;
+}
+.color #translator {
+  background-color: #F89461;
+  transition: background-color 1s;
+}
+.color #translator .contents-wrapper .folder {
+  transition: ease 1s all;
+}
+.color #translator .contents-wrapper .folder .labels .category,
+.color #translator .contents-wrapper .folder .labels .language {
+  transition: background-color 1s;
+  background-color: #FCCC4A;
+}
+.color #translator .contents-wrapper .folder .labels .category {
+  transition: color 1s, background-color 1s;
+  background-color: #161616;
+  color: #FFFAFA;
+}
+.color #translator .contents-wrapper .folder .labels .country-list {
+  background-color: #FCCC4A;
+  transition: background-color 1s;
+}
+.color #translator .contents-wrapper .folder .labels .country-list button {
+  background-color: #FCCC4A;
+  transition: background-color 1s;
+}
+.color #translator .contents-wrapper .folder .text-area {
+  background-color: #161616;
+  transition: background-color 1s;
+}
+.color #translator .contents-wrapper .folder .text-area .contents {
+  color: #FFFAFA;
+  transition: color 1s;
+}
+
+#header {
+  display: flex;
+  padding: 15px 40px;
+  background-color: #FFFAFA;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #161616;
+  font-size: 14px;
+}
+#header .mode-toggle {
+  position: relative;
+  width: 108px;
+  height: 40px;
+  padding: 5px 8px;
+  border-radius: 38px;
+  display: flex;
+  align-items: center;
+  border: 2px solid #161616;
+  transition: ease 1s all;
+}
+#header .mode-toggle p {
+  margin-inline: 5px;
+  font-size: 14px;
+  width: 100%;
+  padding: 0px 0px 0px 33px;
+  transition: ease 1s all;
+}
+#header .mode-toggle .ball {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  right: 55px;
+  border-radius: 100px;
+  background-color: #444444;
+  margin-inline: 10px;
+  transition: right 1s, background-color 1s;
+}
+
+#translator {
+  background-color: #F3F3F3;
+  padding: 40px;
+  height: 100vh;
+}
+#translator .contents-wrapper .folder {
+  flex: 2;
+  position: relative;
+}
+#translator .contents-wrapper .folder .labels {
+  display: flex;
+}
+#translator .contents-wrapper .folder .labels .category,
+#translator .contents-wrapper .folder .labels .language {
+  position: relative;
+  z-index: 1;
+  top: 2px;
+  background-color: #F3F3F3;
+  border: 2px solid #161616;
+  border-top-left-radius: 38px;
+  border-top-right-radius: 38px;
+  border-bottom: none;
+  width: 240px;
+  height: 50px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+#translator .contents-wrapper .folder .labels .category {
+  background-color: white;
+}
+#translator .contents-wrapper .folder .labels .language {
+  background-color: #E6E6E6;
+  position: relative;
+}
+#translator .contents-wrapper .folder .labels .output-lan {
+  cursor: pointer;
+}
+#translator .contents-wrapper .folder .labels .input-lan {
+  border-bottom: 2px solid #161616;
+}
+#translator .contents-wrapper .folder .labels .country-list {
+  position: absolute;
+  z-index: 999;
+  top: 50px;
+  width: 102%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  display: grid;
+  position: absolute;
+  top: 48px;
+  background-color: #D9D9D9;
+  border: 2px solid #161616;
+  border-bottom-left-radius: 38px;
+  border-bottom-right-radius: 38px;
+  max-height: 40vh;
+  overflow-y: auto;
+}
+#translator .contents-wrapper .folder .labels .country-list button {
+  padding: 10px;
+  border: none;
+  background: none;
+  font-size: 16px;
+}
+#translator .contents-wrapper .folder .labels .empty {
+  width: 50px;
+}
+#translator .contents-wrapper .folder .text-area {
+  border: 2px solid #161616;
+  border-top-right-radius: 38px;
+  border-bottom-left-radius: 38px;
+  border-bottom-right-radius: 38px;
+  height: 250px;
+  width: 100%;
+  background-color: white;
+}
+#translator .contents-wrapper .folder .text-area .contents {
+  margin-top: 70px;
+  margin-left: 40px;
+  font-size: 20px;
+}
+#translator .contents-wrapper .folder .text-area .icon {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  border-radius: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #161616;
+}
+#translator .contents-wrapper .folder .text-area .icon svg {
+  width: 25px;
+  height: 25px;
+}
+#translator .contents-wrapper .folder .text-area .record-btn {
+  cursor: pointer;
+}
+#translator .contents-wrapper .translate-icon {
+  display: flex;
+  justify-content: center;
+}
+#translator .contents-wrapper .change-icon {
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  margin: 30px;
+  border-radius: 80px;
+  background-color: #444444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#translator .contents-wrapper .change-icon svg {
+  width: 25px;
+  height: 25px;
+  color: white;
+  transform: rotate(90deg);
+}
+
+.flashing-red {
+  background-color: red;
+}
+.flashing-red svg {
+  color: white;
+}
+
+@media screen and (min-width: 992px) {
+  body {
+    height: 100vh;
+    overflow: hidden;
+  }
+  #header {
+    padding: 20px 60px;
+    font-size: 16px;
+  }
+  #translator {
+    padding: 80px 60px;
+  }
+  #translator .contents-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #translator .contents-wrapper .folder {
+    min-width: 350px;
+  }
+  #translator .contents-wrapper .folder .labels .country-list {
+    max-height: 55vh;
+  }
+  #translator .contents-wrapper .folder .text-area {
+    height: 500px;
+  }
+  #translator .contents-wrapper .folder .text-area .contents {
+    margin-top: 100px;
+    font-size: 22px;
+  }
+  #translator .contents-wrapper .change-icon {
+    margin: 25px;
+  }
+  #translator .contents-wrapper .change-icon svg {
+    transform: rotate(0deg);
+  }
+}/*# sourceMappingURL=globals.css.map */

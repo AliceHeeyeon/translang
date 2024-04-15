@@ -1,0 +1,268 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+// Toggle on : Color Mode
+.color {
+  
+    #header {
+        color: $off-white;
+        background-color: $off-black;
+        @include ease-transition(1s);
+
+        .mode-toggle {
+            background-color: white;
+            .ball {
+                right: 0px;
+                background-color: $orange;
+            }
+            p {
+                text-align: left;
+                padding: 0px 100px 0px 0px;
+                @include ease-transition(1s);
+            }
+        }
+    }
+
+    // Translator
+    #translator {
+        background-color: $orange;
+        transition: background-color 1s;
+
+        .contents-wrapper {
+            .folder {
+                @include ease-transition(1s);
+
+                .labels {
+                    .category,
+                    .language {
+                        transition: background-color 1s;
+                        background-color: $yellow;
+                    }
+
+                    .category {
+                        transition: color 1s, background-color 1s;
+                        background-color: $off-black;
+                        color: $off-white;
+                    }
+
+                    .country-list {
+                        background-color: $yellow;
+                        transition: background-color 1s;
+
+                        button {
+                            background-color: $yellow;
+                            transition: background-color 1s;
+                        }
+                    }
+                }
+                .text-area {
+                    background-color: $off-black;
+                    transition: background-color 1s;
+
+                    .contents {
+                        color: $off-white;
+                        transition: color 1s;
+                    }
+                }
+            }
+        }
+    }    
+}
+
+
+// header
+#header {
+    display: flex;
+    padding: 15px 40px;
+    background-color: $off-white;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid $off-black;
+    font-size: 14px;
+
+    .mode-toggle {
+        position: relative;
+        width: 108px;
+        height: 40px;
+        padding: 5px 8px;
+        border-radius: $default-br;
+        display: flex;
+        align-items: center;
+        border: 2px solid $off-black;
+        @include ease-transition(1s);
+
+        p {
+            margin-inline: 5px;
+            font-size: 14px;
+            width: 100%;
+            padding: 0px 0px 0px 33px;
+            @include ease-transition(1s);
+        }
+
+        .ball {
+            position: absolute;
+            width: 28px;
+            height: 28px;
+            right: 55px;
+            border-radius: 100px;
+            background-color: $dark-gray;
+            margin-inline: 10px;
+            transition: right 1s, background-color 1s;
+        }
+
+    }
+}
+
+// Translator
+#translator {
+    background-color: $light-gray;
+    padding: 40px;
+    height: 100vh;
+
+    .contents-wrapper {
+ 
+        .folder {
+            flex: 2;
+            position: relative;
+            .labels {
+                display: flex;
+                .category,
+                .language {
+                    position: relative;
+                    z-index: 1;
+                    top: 2px;
+                    background-color: $light-gray;
+                    border: 2px solid $off-black;
+                    border-top-left-radius: $default-br;
+                    border-top-right-radius: $default-br;
+                    border-bottom: none;
+                    width: 240px;
+                    height: 50px;
+                    align-items: center;
+                    display: flex;
+                    justify-content: center;
+                }
+
+                .category {
+                    background-color: white;
+                }
+
+                .language {
+                    background-color: $gray;
+                    position: relative;
+                }
+
+                .output-lan {
+                    cursor: pointer;
+                }
+
+                .input-lan {
+                    border-bottom: 2px solid $off-black;
+                }
+
+                .country-list {
+                    position: absolute;
+                    z-index: 999;
+                    top: 50px;
+                    width: 102%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 16px;
+                    display: grid;
+                    position: absolute;
+                    top: 48px;
+                    background-color: $light-darkgray;
+                    border: 2px solid $off-black;
+                    border-bottom-left-radius:$default-br;
+                    border-bottom-right-radius:$default-br;
+                    max-height: 40vh;
+                    overflow-y: auto;
+
+                    button {
+                        padding: 10px;
+                        border: none;
+                        background: none;
+                        font-size: 16px;
+                    }
+                }
+                .empty {
+                    width: 50px;
+                }
+            }
+            .text-area {
+                border: 2px solid $off-black;
+                border-top-right-radius: $default-br;
+                border-bottom-left-radius: $default-br;
+                border-bottom-right-radius: $default-br;
+                height: 250px;
+                width: 100%;
+                background-color: white;
+
+                .contents {
+                    margin-top: 70px;
+                    margin-left: 40px;
+                    font-size: 20px;
+                }
+
+                .icon {
+                    position: absolute;
+                    bottom: 30px;
+                    left: 30px;
+                    width: 50px;
+                    height: 50px;
+                    padding: 10px;
+                    border-radius: 80px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 2px solid $off-black;
+
+                    svg {
+                        width: 25px;
+                        height: 25px;
+                    }
+                }
+
+                .record-btn {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .translate-icon {
+            display: flex;
+            justify-content: center;
+        }
+
+        .change-icon {
+            width: 50px;
+            height: 50px;
+            padding: 10px;
+            margin: 30px;
+            border-radius: 80px;
+            background-color: $dark-gray;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            svg {
+                width: 25px;
+                height: 25px;
+                color: white;
+                transform: rotate(90deg);
+            }
+        }
+    }
+}
+
+.flashing-red {
+    background-color: red;
+    svg {
+        color: white;
+    }
+}
