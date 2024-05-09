@@ -2,7 +2,7 @@
 
 > Project Description
 
-A translate application which recognize user's voice and translate it to assigned languages. The output speaks out in the native language voice. 
+A translate application which recognize user's voice and translate it to assigned languages. The output speaks out in the native language voice.
 
 > Key Features
 
@@ -20,5 +20,6 @@ Next.js, TypeScript
 > Project Mockups
 
 [Project URL](https://translang-two.vercel.app/)
-![mockup1](./public/translang.png)
 
+![mockup1](./src/images/mockup_desktop.png)
+![mockup2](./src/images/mockup_mobile.png)
